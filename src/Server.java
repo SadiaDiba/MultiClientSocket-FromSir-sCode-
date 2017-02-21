@@ -56,45 +56,45 @@ class ServerThread implements Runnable {
 //            for (int i = 0; i < client_count; i++) {
 //                st[i].oos.writeObject(this.thr.getName()+" is added");
 //            }
-            
-            thr.start();          
-        } catch (Exception ex) {
-
-        }
-    }
-
-    public void run() {
-    	try {
-    		String name =(String) ois.readObject();
-    		this.thr.setName(name);
-    		System.out.println("New client is added- "+ this.thr.getName());
-    		
-    		//to show all clients that new client is added (sent to all clients)
-    		for (int i = 0; i < client_count; i++) {
-                st[i].oos.writeObject(this.thr.getName()  +"  is added");
-
-            }
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-    	
-
-        while (true) {
-            try {
-                Object t = ois.readObject();
-                if (t != null) {
-                   System.out.println("From Client "+"("+(this.thr.getName())+"): "+t);
-                }
-
-                for (int i = 0; i < client_count; i++) {
-                    st[i].oos.writeObject("From Server: "+"("+(this.thr.getName())+"): "+t);
-
-                }
-            } catch (Exception ex) {
-
-            }
-
-        }
-
-    }
+///*            
+//            thr.start();          
+//        } catch (Exception ex) {
+//
+//        }
+//    }
+//
+//    public void run() {
+//    	try {
+//    		String name =(String) ois.readObject();
+//    		this.thr.setName(name);
+//    		System.out.println("New client is added- "+ this.thr.getName());
+//    		
+//    		//to show all clients that new client is added (sent to all clients)
+//    		for (int i = 0; i < client_count; i++) {
+//                st[i].oos.writeObject(this.thr.getName()  +"  is added");
+//
+//            }
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//		}
+//    	
+//
+//        while (true) {
+//            try {
+//                Object t = ois.readObject();
+//                if (t != null) {
+//                   System.out.println("From Client "+"("+(this.thr.getName())+"): "+t);
+//                }
+//
+//                for (int i = 0; i < client_count; i++) {
+//                    st[i].oos.writeObject("From Server: "+"("+(this.thr.getName())+"): "+t);
+//
+//                }
+//            } catch (Exception ex) {
+//
+//            }
+//
+//        }
+//
+//    }*/
 }
