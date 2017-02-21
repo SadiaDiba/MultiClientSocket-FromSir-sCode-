@@ -9,6 +9,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Server {
+	
+	//Added by Diba
+	    private Socket ClientSock;
+	    private Thread thr;
+	    private ObjectOutputStream oos;
+	    private ObjectInputStream ois;
+	    static ServerThread[] st = new ServerThread[10];
+	    //upto here
 
     private ServerSocket ServSock;
 
